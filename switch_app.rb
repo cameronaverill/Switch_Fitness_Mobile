@@ -49,4 +49,5 @@ get "/:workout" do |workout|
 		@workout_selection = workout.downcase.to_sym
 		@image = workouts_hash[:pushups][:image]
 		@description = workouts_hash[:pushups][:description]
+end
 		
