@@ -4,18 +4,6 @@ get "/" do
   erb :home_page
 end
 
-get "/pushups" do 
-  erb :pushups  
-end
-
-get "/squats" do 
-    erb :squats
-end
-
-get "/treadmill" do 
-    erb :treadmill
-end
-
 get "/trainers" do 
     @trainers = ["Steve", "Cuan", "Kelly"]
     erb :trainers
@@ -38,16 +26,17 @@ get "/:workout" do |workout|
 							   velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
 							   cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
 							   laborum."},
-					treadmill: {image: "http://ecx.images-amazon.com/images/I/81EVf9ZDxhL._SL1500_.jpg"
+					treadmill: {image: "http://ecx.images-amazon.com/images/I/81EVf9ZDxhL._SL1500_.jpg",
 								description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 							   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
 							   ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
 							   ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
 							   velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
 							   cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-							   laborum."}
+							   laborum."}}
 		@workout_selection = workout.downcase.to_sym
-		@image = workouts_hash[:pushups][:image]
-		@description = workouts_hash[:pushups][:description]
-end
-		
+		@image = workouts_hash[@workout_selection][:image]
+		@description = workouts_hash[@workout_selection][:description]
+		erb :workout
+	end
+>>>>>>> refs/remotes/origin/master

@@ -1,0 +1,13 @@
+<head>
+<link href="/style.css" ref="stylesheet" type="text/css">
+<%page_refresh = rand(0..2)%>
+<%pages = {0 => "pushups", 1 => "squats", 2 => "treadmill"}%>
+
+<meta HTTP-EQUIV="REFRESH" content="10; url=/<%=pages[page_refresh]%>">
+</head>
+
+<body>
+<h1> <%=@workout_selection.capitalize%> </h1>
+<img style="position: block" src="<%=@image%>"> 
+<p> <%=@description%> </p>
+</body>
