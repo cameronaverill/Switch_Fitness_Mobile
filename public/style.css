@@ -1,8 +1,12 @@
 header{
-	background: url("http://www.switchplayground.com/wp-content/uploads/2014/11/logo2.png");
+	background: url("http://www.switchplayground.com/wp-content/uploads/2014/11/test-bg-1.jpg");
+	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5), url('http://www.switchplayground.com/wp-content/uploads/2014/11/test-bg-1.jpg'));
 	background-size: cover;
 	background-position: center;
+	padding: 20px 0 0 0;
 }
+
+
 body{
 	text-align: center;
 	margin: 0 auto;
@@ -11,4 +15,28 @@ body{
 .trainer_names {
 	display: inline;
 	color: red;
+}
+
+.navnames{
+	display: inline;
+	margin: 30px;
+	color: white;
+	font-size: 24px;
+	text-decoration: none;
+}
+
+.navbar{
+	background: black;
+	color: white;
+	margin: 0;
+	padding: 10px;
+}
+
+img{
+	max-width: 240px;
+}
+
+h1{
+	font-size: 64px;
+	color: black;
 }
