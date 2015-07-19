@@ -39,4 +39,4 @@ get "/:workout" do |workout|
 		@description = workouts_hash[@workout_selection][:description]
 		erb :workout
 	end
->>>>>>> refs/remotes/origin/master
+
