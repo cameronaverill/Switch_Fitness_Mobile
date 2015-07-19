@@ -8,6 +8,7 @@ body{
 	margin: 0 auto;
 }
 
-li {
+.trainer_names {
 	display: inline;
+	color: red;
 }
