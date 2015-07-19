@@ -17,5 +17,6 @@ get "/treadmill" do
 end
 
 get "/trainers" do 
+    @trainers = ["Steve", "Cuan", "Kelly"]
     erb :trainers
 end
