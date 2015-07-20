@@ -5,17 +5,56 @@
 </head>
 
 <body>
-<header>
-<h1> Switch Playground </h1>
-<div class="navbar">
-<ul>
- <li class="navnames"> <a class = "navnames" href="/"> Home</a> </li>
- <li class="navnames"> <a class= "navnames" href="/trainers"> Trainers</a> </li>
- <li class="navnames"> <a class = "navnames" href="/pushups">Pushups</a> </li>
- <li class="navnames"> <a class = "navnames" href="/squats">Squats</a></li>
- <li class="navnames"> <a class = "navnames" href="/treadmill">Treadmill</a> </li>
- </ul>
- </div>
-</header>
-<%= yield %>
+	<header>
+		<h1> 
+			Switch Playground 
+		</h1>
+		<div class="navbar">
+			<ul>
+			 	<li class="navnames"><a class = "navnames" href="/">Home</a></li>
+			 	<li class="navnames"><a class= "navnames" href="/trainers">Trainers</a></li>
+			 	<li class="navnames"><a class = "navnames" href="/pushups">Pushups</a></li>
+			 	<li class="navnames"><a class = "navnames" href="/squats">Squats</a></li>
+			 	<li class="navnames"><a class = "navnames" href="/treadmill">Treadmill</a></li>
+			</ul>
+		</div>
+	</header>
+	<%= yield %>
+	<div id='countdown'></div>
+
+	<script>
+    var interval;
+    var minutes = 2;
+    var seconds = 0;
+    window.onload = function() {
+        countdown('countdown');
+    }
+
+    function countdown(element) {
+        interval = setInterval(function() {
+            var el = document.getElementById(element);
+            if(seconds == 0) {
+                if(minutes == 0) {
+                    el.innerHTML = "countdown's over!";                    
+                    clearInterval(interval);
+                    return;
+                } else {
+                    minutes--;
+                    seconds = 60;
+                }
+            }
+
+            if (seconds == 60) {
+            	var minute_text = minutes + 1;
+            	var second_text = "00";
+            } else {
+            	var minute_text = minutes;
+            	var second_text = seconds;
+            }
+
+						el.innerHTML = minute_text + ":" + second_text;
+            seconds--;
+        }, 1000);
+    }
+    </script>
 </body>
