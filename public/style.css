@@ -6,7 +6,6 @@ header{
 	padding: 20px 0 0 0;
 }
 
-
 body{
 	text-align: center;
 	margin: 0 auto;
@@ -32,11 +31,34 @@ body{
 	padding: 10px;
 }
 
+#countdown-outline{
+	padding: 15px;
+	width: 60%;
+	background: rgba(140,21,21, 1);
+	right: 0;
+}
+
+#countdown-inside{
+	padding: 20px;
+	width: 100%;
+	background: rgba(196, 216, 226, 1);
+}
+.container{
+	margin: 0 auto;
+}
+.col-sm-4{
+	padding: 0;
+}
+
 img{
 	max-width: 240px;
 }
 
-h1{
+li{
+	margin: 0;
+}
+.header-title{
 	font-size: 64px;
 	color: black;
+	margin: 50px;
 }
