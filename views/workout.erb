@@ -1,5 +1,7 @@
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link href="/style.css" ref="stylesheet" type="text/css">
+
 <%page_refresh = rand(0..2)%>
 <%pages = {0 => "pushups", 1 => "squats", 2 => "treadmill"}%>
 
@@ -7,7 +9,41 @@
 </head>
 
 <body>
-<h1> <%=@workout_selection.capitalize%> </h1>
-<img style="position: block" src="<%=@image%>"> 
+<h2> <%=@workout_selection.capitalize%> </h2>
+<div class="container"><div class="row">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-3">
+	    <div id = "countdown-outline">
+			<div id = "countdown-inside">
+				<span id="countdown" class="timer"></span>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<img  src="<%=@image%>"> 
+	</div>
+	<div class="col-sm-3"></div>
+</div>
 <p> <%=@description%> </p>
+</div>
+<script>
+var seconds = 9;
+function secondPassed() {
+    var minutes = Math.round((seconds - 30)/60);
+    var remainingSeconds = seconds % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;  
+    }
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "Buzz Buzz";
+    } else {
+        seconds--;
+    }
+}
+ 
+var countdownTimer = setInterval('secondPassed()', 1000);
+</script>
+
 </body>
